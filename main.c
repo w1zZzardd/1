@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdint-gcc.h>
+#include "C:\Users\megam\CLionProjects\practice\libs\vector.h"
 
 struct point {
     int x;
@@ -101,4 +103,11 @@ typedef struct nameNhigh haract;
     return 0;
 }
 */
+
+
+int main () {
+    vector v = createVector (4);
+
+    return 0;
+};
 

@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\megam\CLionProjects\untitled8
+CMAKE_SOURCE_DIR = C:\Users\megam\CLionProjects\practice
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\megam\CLionProjects\untitled8\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\megam\CLionProjects\practice\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\megam\CLionProjects\untitled8\cmake-build-debug\CMakeFiles C:\Users\megam\CLionProjects\untitled8\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\megam\CLionProjects\practice\cmake-build-debug\CMakeFiles C:\Users\megam\CLionProjects\practice\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\megam\CLionProjects\untitled8\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\megam\CLionProjects\practice\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,30 @@ untitled8/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/build
 .PHONY : untitled8/fast
 
+libs/vector.obj: libs/vector.c.obj
+.PHONY : libs/vector.obj
+
+# target to build an object file
+libs/vector.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/libs/vector.c.obj
+.PHONY : libs/vector.c.obj
+
+libs/vector.i: libs/vector.c.i
+.PHONY : libs/vector.i
+
+# target to preprocess a source file
+libs/vector.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/libs/vector.c.i
+.PHONY : libs/vector.c.i
+
+libs/vector.s: libs/vector.c.s
+.PHONY : libs/vector.s
+
+# target to generate assembly for a file
+libs/vector.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/libs/vector.c.s
+.PHONY : libs/vector.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... untitled8
+	@echo ... libs/vector.obj
+	@echo ... libs/vector.i
+	@echo ... libs/vector.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

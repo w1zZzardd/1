@@ -6,11 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/megam/CLionProjects/untitled8/main.c
+C:/Users/megam/CLionProjects/practice/libs/vector.h
+stdio.h
+-
+
+C:/Users/megam/CLionProjects/practice/main.c
 stdio.h
 -
 stdlib.h
 -
 time.h
+-
+stdint-gcc.h
+-
+C:/Users/megam/CLionProjects/practice/libs/vector.h
 -
 

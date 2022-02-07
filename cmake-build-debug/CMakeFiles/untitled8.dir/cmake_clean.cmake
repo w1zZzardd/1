@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/untitled8.dir/libs/vector.c.obj"
   "CMakeFiles/untitled8.dir/main.c.obj"
   "libuntitled8.dll.a"
   "untitled8.exe"
