@@ -9,15 +9,15 @@
 C:/Users/megam/CLionProjects/practice/libs/vector.h
 stdio.h
 -
+stdbool.h
+-
 
 C:/Users/megam/CLionProjects/practice/main.c
 stdio.h
 -
+assert.h
+-
 stdlib.h
--
-time.h
--
-stdint-gcc.h
 -
 C:/Users/megam/CLionProjects/practice/libs/vector.h
 -

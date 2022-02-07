@@ -14,16 +14,17 @@ vector createVector(size_t n) {
 }
 
 void reserve(vector *v, size_t newCapacity) {
-    if (newCapacity != 0) {
-        v->data = realloc(v->data, newCapacity * sizeof(int));
+    if (newCapacity) {
+        v->data = (int *) realloc(v->data, sizeof(int) * newCapacity);
         if (v->data == NULL) {
             fprintf(stderr, "bad alloc");
             exit(1);
-        } else
-            v->data = NULL;
+        }
+        v->capacity = newCapacity;
         if (newCapacity < v->size)
             v->size = newCapacity;
-        v->capacity = newCapacity;
+    } else {
+        deleteVector(v);
     }
 }
 
@@ -42,33 +43,53 @@ void deleteVector(vector *v) {
     v->size = 0;
 }
 
-bool isEmpty (vector *v){
+bool isEmpty(vector *v) {
     return v->size == 0;
 }
 
-bool isFull (vector *v){
+bool isFull(vector *v) {
     return v->size == v->capacity;
 }
 
-int getVectorValue (vector *v, size_t i){
-    return v->data [i];
+int getVectorValue(vector *v, size_t i) {
+    return v->data[i];
 }
 
-void pushBack(vector *v, int x){
+void pushBack(vector *v, int x) {
     if (v->capacity == 0)
         reserve(v, 1);
     else if (isFull(v))
         reserve(v, v->capacity * 2);
-    v->data [v->size++] = x;
+    v->data[v->size++] = x;
 }
 
-void popBack (vector *v){
-    if (isEmpty(v)){
+void popBack(vector *v) {
+    if (isEmpty(v)) {
         fprintf(stderr, "bad alloc");
         exit(1);
     }
     v->size--;
 }
 
+int *atVector(vector *v, size_t index) {
+    if (index > v->size) {
+        fprintf(stderr, "IndexError: a[%zu] is not exists", index);
+    }
+    return &v->data + index;
+}
 
+int* back(vector *v) {
+    if (isEmpty(v)) {
+        fprintf(stderr, "Vector is empty");
+        exit(1);
+    }
+    return v->data + v->size - 1;
+}
 
+int* front (vector *v){
+    if (isEmpty(v)) {
+        fprintf(stderr, "Vector is empty");
+        exit(1);
+    }
+    return v->data;
+}
