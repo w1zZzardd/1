@@ -1,8 +1,5 @@
-#include <stdio.h>
 #include <assert.h>
-#include <stdlib.h>
 #include "C:\Users\megam\CLionProjects\practice\libs\vector.h"
-
 
 void test_pushBack_emptyVector() {
     vector v = createVector(0);
@@ -98,5 +95,5 @@ void test() {
 
 int main() {
     test();
-};
+}
 

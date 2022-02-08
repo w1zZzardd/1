@@ -78,7 +78,7 @@ int *atVector(vector *v, size_t index) {
     return &v->data + index;
 }
 
-int* back(vector *v) {
+int *back(vector *v) {
     if (isEmpty(v)) {
         fprintf(stderr, "Vector is empty");
         exit(1);
@@ -86,7 +86,7 @@ int* back(vector *v) {
     return v->data + v->size - 1;
 }
 
-int* front (vector *v){
+int *front(vector *v) {
     if (isEmpty(v)) {
         fprintf(stderr, "Vector is empty");
         exit(1);
