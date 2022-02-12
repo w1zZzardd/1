@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Users/megam/CLionProjects/practice/libs/matrix.c" "C:/Users/megam/CLionProjects/practice/cmake-build-debug/CMakeFiles/untitled8.dir/libs/matrix.c.obj"
   "C:/Users/megam/CLionProjects/practice/libs/vector.c" "C:/Users/megam/CLionProjects/practice/cmake-build-debug/CMakeFiles/untitled8.dir/libs/vector.c.obj"
   "C:/Users/megam/CLionProjects/practice/main.c" "C:/Users/megam/CLionProjects/practice/cmake-build-debug/CMakeFiles/untitled8.dir/main.c.obj"
   )

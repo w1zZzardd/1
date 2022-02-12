@@ -74,6 +74,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/megam/CLionProjects/practice/libs/matrix.c">
+			<Option target="untitled8"/>
+		</Unit>
+		<Unit filename="C:/Users/megam/CLionProjects/practice/libs/matrix.h">
+			<Option target="untitled8"/>
+		</Unit>
 		<Unit filename="C:/Users/megam/CLionProjects/practice/libs/vector.c">
 			<Option target="untitled8"/>
 		</Unit>

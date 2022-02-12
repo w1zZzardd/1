@@ -128,6 +128,30 @@ untitled8/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/build
 .PHONY : untitled8/fast
 
+libs/matrix.obj: libs/matrix.c.obj
+.PHONY : libs/matrix.obj
+
+# target to build an object file
+libs/matrix.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/libs/matrix.c.obj
+.PHONY : libs/matrix.c.obj
+
+libs/matrix.i: libs/matrix.c.i
+.PHONY : libs/matrix.i
+
+# target to preprocess a source file
+libs/matrix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/libs/matrix.c.i
+.PHONY : libs/matrix.c.i
+
+libs/matrix.s: libs/matrix.c.s
+.PHONY : libs/matrix.s
+
+# target to generate assembly for a file
+libs/matrix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled8.dir\build.make CMakeFiles/untitled8.dir/libs/matrix.c.s
+.PHONY : libs/matrix.c.s
+
 libs/vector.obj: libs/vector.c.obj
 .PHONY : libs/vector.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... untitled8
+	@echo ... libs/matrix.obj
+	@echo ... libs/matrix.i
+	@echo ... libs/matrix.s
 	@echo ... libs/vector.obj
 	@echo ... libs/vector.i
 	@echo ... libs/vector.s
