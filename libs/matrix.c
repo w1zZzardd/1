@@ -2,6 +2,7 @@
 #include <malloc.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include "array.h"
 
 void swap(int *a, int *b) {
     int t = *a;
@@ -274,3 +275,14 @@ matrix task4(matrix m) {
     else
         return m;
 }
+
+//task5
+void transposeIfMatrixHasEqualSumOfRows(matrix m) {
+    long long rowSums[m.nRows];
+    for (int row = 0; row < m.nRows; ++row) {
+        rowSums[row] = getSum(m.values[row], m.nCols);
+    }
+    if (!isUnique(rowSums, m.nRows))
+        transposeSquareMatrix(m);
+}
+
