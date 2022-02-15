@@ -6,3 +6,25 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/megam/CLionProjects/practice/libs/matrix.c
+matrix.h
+C:/Users/megam/CLionProjects/practice/libs/matrix.h
+malloc.h
+-
+stdbool.h
+-
+stdio.h
+-
+
+C:/Users/megam/CLionProjects/practice/libs/matrix.h
+stdbool.h
+-
+stdio.h
+-
+
+C:/Users/megam/CLionProjects/practice/main.c
+assert.h
+-
+../practice/libs/matrix.h
+C:/Users/megam/CLionProjects/practice/libs/matrix.h
+

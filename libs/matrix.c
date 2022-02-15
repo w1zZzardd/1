@@ -59,10 +59,9 @@ void outputMatrix(matrix m) {
 }
 
 void outputMatrices(matrix *ms, int nMatrices) {
-    for (int i = 0; i < nMatrices; i++) {
+    for (int i = 0; i < nMatrices; i++)
         outputMatrix(ms[i]);
-        printf("\n");
-    }
+    printf("\n");
 }
 
 //4 блок
@@ -81,12 +80,37 @@ void swapColumns(matrix m, int j1, int j2) {
 //5 блок
 void insertionSortRowsMatrixByRowCriteria(matrix m,
                                           int (*criteria)(int *, int)) {
-
+    int *a = (int *) malloc(sizeof(int) * m.nRows);
+    for (int i = 0; i < m.nRows; i++)
+        a[i] = criteria(m.values[i], m.nCols);
+    for (int i = 0; i < m.nRows; i++) {
+        int max = i;
+        for (int j = i; j < m.nRows; j++) {
+            if (a[j] > a[max])
+                max = j;
+        }
+        swap(&a[max], &a[i]);
+        swapRows(m, i, max);
+    }
 }
 
 void insertionSortColsMatrixByColCriteria(matrix m,
                                           int (*criteria)(int *, int)) {
-
+    int *criteriaArr = (int *) malloc(sizeof(int) * m.nCols);
+    int *additionalArr = (int *) malloc(sizeof(int) * m.nRows);
+    for (int i = 0; i < m.nCols; i++) {
+        for (int j = 0; j < m.nRows; j++)
+            additionalArr[j] = m.values[j][i];
+        criteriaArr[i] = criteria(additionalArr, m.nRows);
+    }
+    for (int i = 0; i < m.nCols; i++) {
+        for (int j = i; j > 0 && criteriaArr[j - 1] > criteriaArr[j]; j--) {
+            swap(&criteriaArr[j - 1], &criteriaArr[j]);
+            swapColumns(m, j, j - 1);
+        }
+    }
+    free(criteriaArr);
+    free(additionalArr);
 }
 
 //6 блок
@@ -197,4 +221,8 @@ matrix *createArrayOfMatrixFromArray(const int *values,
     return ms;
 }
 
-
+void task1(matrix m) {
+    position maxIndex = getMaxValuePos(m);
+    position minIndex = getMinValuePos(m);
+    swapRows(m, maxIndex.rowIndex, minIndex.rowIndex);
+}
