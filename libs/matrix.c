@@ -226,3 +226,18 @@ void task1(matrix m) {
     position minIndex = getMinValuePos(m);
     swapRows(m, maxIndex.rowIndex, minIndex.rowIndex);
 }
+
+int getMinNegative(int *a, int n) {
+    int min = a[0];
+    for (int i = 0; i < n; ++i) {
+        if (a[i] < min)
+            min = a[i];
+    }
+
+    return -min;
+}
+
+
+void task2(matrix m) {
+    insertionSortColsMatrixByColCriteria(m, getMinNegative);
+}
