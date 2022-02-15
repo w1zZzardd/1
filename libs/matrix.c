@@ -256,3 +256,21 @@ void task3(matrix m) {
     insertionSortColsMatrixByColCriteria(m, getMinNegative);
 }
 
+matrix mulMatrices(matrix m1, matrix m2) {
+    matrix c = getMemMatrix(m1.nRows, m1.nCols);
+    for (int i = 0; i < m1.nRows; i++)
+        for (int j = 0; j < m2.nCols; j++) {
+            c.values[i][j] = 0;
+            for (int k = 0; k < m1.nCols; k++)
+                c.values[i][j] += m1.values[i][k] * m2.values[k][j];
+        }
+
+    return c;
+}
+
+matrix task4(matrix m) {
+    if (isSymmetricMatrix(m))
+        return mulMatrices(m, m);
+    else
+        return m;
+}
