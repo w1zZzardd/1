@@ -227,6 +227,20 @@ void task1(matrix m) {
     swapRows(m, maxIndex.rowIndex, minIndex.rowIndex);
 }
 
+int getMaxNegative(int *a, int n) {
+    int max = a[0];
+    for (int i = 0; i < n; ++i) {
+        if (a[i] > max)
+            max = a[i];
+    }
+
+    return -max;
+}
+
+void task2(matrix m) {
+    insertionSortRowsMatrixByRowCriteria(m, getMaxNegative);
+}
+
 int getMinNegative(int *a, int n) {
     int min = a[0];
     for (int i = 0; i < n; ++i) {
@@ -238,6 +252,7 @@ int getMinNegative(int *a, int n) {
 }
 
 
-void task2(matrix m) {
+void task3(matrix m) {
     insertionSortColsMatrixByColCriteria(m, getMinNegative);
 }
+
