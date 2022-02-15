@@ -291,3 +291,35 @@ bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
     matrix m3 = mulMatrices(m1, m2);
     return (bool) isEMatrix(m3);
 }
+
+int task7(matrix m) {
+    int sumArray[m.nCols + m.nRows - 2];
+    int k = 0;
+    for (int i = 1, j = 0; i < m.nRows; ++i, ++j) {
+        int max = m.values[i][0];
+        int duplicate = i;
+        while (i + 1 < m.nRows && j + 1 < m.nCols) {
+            j++;
+            i++;
+            max = max2(max, m.values[i][j]);
+        }
+        sumArray[k++] = max;
+        j = 0;
+        i = duplicate;
+    }
+    for (int i = 1, j = 0; i < m.nCols; i++, j++) {
+        int max = m.values[0][i];
+        int duplicate = i;
+        while (i + 1 < m.nCols && j + 1 < m.nRows) {
+            j++;
+            i++;
+            max = max2(max, m.values[j][i]);
+        }
+        sumArray[k++] = max;
+        j = 0;
+        i = duplicate;
+    }
+
+    int sum = sumInArray(sumArray, m.nRows + m.nCols - 2);
+    return sum;
+}
